@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag
-  Tag.create({ //req.body
+  Tag.create({ 
     tag_name: req.body.tag_name,
   })
   .then((newTag) => res.json(newTag))
@@ -29,14 +29,12 @@ router.post('/', (req, res) => {
 });
 
 router.post('/seed', async (req, res) => {
-  // seedTags
   try {
     const seedData = await seedTags()
     res.json(seedData)
 } catch (error) {
   res.json(error)
 }
-
 });
 
 router.put('/:id', async (req, res) => {
@@ -47,15 +45,7 @@ router.put('/:id', async (req, res) => {
     message: responseMsg,
     result: updateTag
   })
-  // Tag.update({tag_name: req.body.tag_name}, {where: {id: req.params.id}})
-  // .then((updateTag) => { //get updated message function? 
-  //   const responseMsg = `Tag ${req.params.id} has been updated`
-  //   res.json({message: responseMsg})
-  // })
-  // // .then((product) => { 
-  // //   return ProductTag.findAll({ where: { tag_id: req.params.id } })
-  // // })
-  // .catch((error) => res.json(error))
+  
 });
 
 router.delete('/:id', (req, res) => {
@@ -64,7 +54,7 @@ router.delete('/:id', (req, res) => {
   .then((deleteTag) => {
     const deleteMsg = `Tag has been deleted`
     res.json(deleteMsg)
-  }) //response message
+  }) 
 });
 
 module.exports = router;
