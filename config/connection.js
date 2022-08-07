@@ -1,9 +1,9 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
-const sequelize = process.env.MYSQLURI
-? new Sequelize(process.env.MYSQLURI)
-  : new Sequelize(process.env.MYSQLDB, process.env.MYSQLUSER, process.env.MYSQLPW, {
+const sequelize = new Sequelize (process.env.MYSQLURI || process.env.JAWSDB_URL)
+    ? new Sequelize(process.env.MYSQLURI)
+    : new Sequelize(process.env.MYSQLDB, process.env.MYSQLUSER, process.env.MYSQLPW, {
       host: 'localhost',
       dialect: 'mysql',
       dialectOptions: {
@@ -11,6 +11,4 @@ const sequelize = process.env.MYSQLURI
       },
     });
   
-
-
 module.exports = sequelize;
