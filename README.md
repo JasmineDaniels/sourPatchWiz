@@ -10,7 +10,7 @@
 
 ## Description?
 
-An awesome application showcasing database use & maintainence.
+An awesome application showcasing database use & CRUD Http protocols.
 
 ## Installation
 
@@ -28,6 +28,8 @@ npm run watch
 ## Demo Link:
 
 # [E-commerce DB Demo](https://drive.google.com/file/d/1S0a8gJIVp_FdvQIYSX3FUPBVRhPzUEIQ/view?usp=sharing)
+
+# [CRUD Demo](https://watch.screencastify.com/v/2xAlQFazdWznetd2l0v5)
 
 ## License
 

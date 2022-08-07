@@ -54,7 +54,11 @@ router.delete('/:id', (req, res) => {
   .then((deleteCategory) => {
     const deleteMsg = `Category has been deleted`
     res.json(deleteMsg)
-  }) 
+  })
+  .catch((err) => {
+    console.log(err),
+    res.status(500).json(err);
+  })
 });
 
 module.exports = router;
